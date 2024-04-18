@@ -50,16 +50,28 @@
 		</select>
 	</div>
     <div class="form-row">
-        <label for="node-config-input-useWsMqtt"><i class="fa fa-rocket"></i> Events</label>
-		<select id="node-config-input-useWsMqtt" style="width: 70%;">
+        <label for="node-config-input-usePushConnection"><i class="fa fa-rocket"></i> Events</label>
+		<select id="node-config-input-usePushConnection" style="width: 70%;">
 			<option value="on">On</option>
 			<option value="off">Off</option>
 		</select>
 	</div>
+    <div class="form-row">
+        <label for="node-config-input-autoQueryActivityOnTrigger"><i class="fa fa-rocket"></i> Auto Query Activities</label>
+		<select id="node-config-input-autoQueryActivityOnTrigger" style="width: 70%;">
+			<option value="on">On</option>
+			<option value="off">Off</option>
+		</select>
+	</div>
+	<p>Please enable Auto Query Activities only when you rely on device activity sent via Alexa Event node.</p>
 	<hr>
     <div class="form-row">
         <label for="node-config-input-alexaServiceHost"><i class="fa fa-amazon"></i> Service Host</label>
         <input type="text" id="node-config-input-alexaServiceHost" placeholder="Required">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-pushDispatchHost"><i class="fa fa-amazon"></i> Push Dispatch Host</label>
+        <input type="text" id="node-config-input-pushDispatchHost" placeholder="Optional">
     </div>
     <div class="form-row">
         <label for="node-config-input-amazonPage"><i class="fa fa-amazon"></i> Page</label>
@@ -224,19 +236,21 @@
             password: 	{ type: 'password' },
         },
         defaults: {
-			name:                { required: false, value: '' },
-			authMethod: 		 { required: true,  value: 'proxy' },
-			proxyOwnIp:			 { required: true,  value: 'localhost' },
-			proxyPort:			 { required: true,  value: 3456, validate: x => 0 <= Number(x) && Number(x) <= 65535 },
-			cookieFile:			 { required: false, value: ''},
-			refreshInterval:	 { required: false, value: '3'},
-            alexaServiceHost:    { required: true,  value: 'pitangui.amazon.com' },
-			amazonPage:          { required: true,  value: 'amazon.com' },
-            acceptLanguage:      { required: false, value: 'en-US' },
-            onKeywordInLanguage: { required: false, value: 'on' },
-            userAgent:           { required: false, value: '' },
-			useWsMqtt:			 { required: true,  value: 'on' },
-			autoInit:			 { required: true,  value: 'on' }
+			name:                           { required: false, value: '' },
+			authMethod: 		            { required: true,  value: 'proxy' },
+			proxyOwnIp:			            { required: true,  value: 'localhost' },
+			proxyPort:			            { required: true,  value: 3456, validate: x => 0 <= Number(x) && Number(x) <= 65535 },
+			cookieFile:			            { required: false, value: ''},
+			refreshInterval:	            { required: false, value: '3'},
+            alexaServiceHost:               { required: true,  value: 'pitangui.amazon.com' },
+			pushDispatchHost:               { required: false, value: '' },
+			amazonPage:                     { required: true,  value: 'amazon.com' },
+            acceptLanguage:                 { required: false, value: 'en-US' },
+            onKeywordInLanguage:            { required: false, value: 'on' },
+            userAgent:                      { required: false, value: '' },
+			usePushConnection:	            { required: true,  value: 'on' },
+			autoInit:			            { required: true,  value: 'on' },
+			autoQueryActivityOnTrigger:     { required: false, value: 'off' },
 		},
 		paletteLabel: 'Alexa Account',
         label: function () {
