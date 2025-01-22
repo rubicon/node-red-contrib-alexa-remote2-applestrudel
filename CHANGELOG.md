@@ -1,4 +1,33 @@
 **node-red-contrib-alexa-remote2-applestrudel**
+- **5.0.51**
+  - Updates dependency alexa-remote2 to v7.0.5
+- **5.0.50**
+  - Updates dependency alexa-remote2 to v7.0.4
+- **5.0.49**
+  - Updates dependency alexa-remote2 to v7.0.3
+- **5.0.48**
+  - Fix authentication to amazon alexa by @abstract-entity
+  - Updates dependency alexa-remote2 to v7.0.2
+- **5.0.47**
+  - Null check fix by @jonferreira
+  - Updates dependency alexa-remote2 to v7.0.0 
+- **5.0.46**
+  - Updates dependency alexa-remote2 to v6.2.2
+- **5.0.45**
+  - Updates dependency alexa-remote2 to v6.2.0
+- **5.0.44**
+  - Get activities fix by @DanPatten
+- **5.0.43**
+  - Double init fix by @DanPatten
+- **5.0.42**
+  - Updates dependency alexa-remote2 to v6.1.2
+- **5.0.41**
+  - Add new option to allow setting of custom push dispatch url
+- **5.0.40**
+  - Updates dependency alexa-remote2 to v6.0.1 to make use of new push connection mechanism
+- **5.0.34**
+  - Set WSMQTT legacy connection type as default
+  - Updates dependency alexa-remote2 to v5.10.3
 - **5.0.27**
   - Restart/Crash fix by @dajuly20
 - **5.0.26**
